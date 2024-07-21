@@ -33,8 +33,18 @@
                         </textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <hr>
+                <form action="{{ route('posts.destroy', [$post->id]) }}" method="post"
+                    onsubmit="return confirm(
+                'Confrim?')">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </div>
-            </form>
+
+
         </div>
     </div>
     </div>
