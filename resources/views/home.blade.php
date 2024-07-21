@@ -4,15 +4,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                @for ($i = 0; $i <= 10; $i++)
+                @foreach (App\Models\Post::all() as $post)
                     <div class="card">
-                        <div class="card-header">Title</div>
+                        <div class="card-header">{{ $post->title }}</div>
 
                         <div class="card-body">
-                            Content
+                            {{ $post->content }}
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </div>
