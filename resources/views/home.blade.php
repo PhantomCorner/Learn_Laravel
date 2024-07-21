@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 @foreach (App\Models\Post::all() as $post)
                     <div class="card">
-                        <div class="card-header">{{ $post->title }}</div>
+                        <div class="card-header">{{ $post->title }} @ {{ $post->created_at }}</div>
 
                         <div class="card-body">
                             {{ $post->content }}
