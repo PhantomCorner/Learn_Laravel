@@ -30,6 +30,15 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request->all());
+        $post =new Post;
+        $post->title=request('title');
+        $post->content=request('content');
+        $post->user_id=\Auth::id();
+        $post->save();
+        
+        return "Post created";
+
     }
 
     /**
