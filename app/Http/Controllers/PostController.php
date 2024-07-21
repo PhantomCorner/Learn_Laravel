@@ -37,7 +37,8 @@ class PostController extends Controller
         $post->user_id=\Auth::id();
         $post->save();
         
-        return "Post created";
+        // return "Post created";
+        return redirect()->to('/'); 
 
     }
 

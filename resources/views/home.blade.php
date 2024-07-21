@@ -4,9 +4,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                @foreach (App\Models\Post::all() as $post)
+                @foreach (App\Models\Post::orderBy('created_at', 'DESC')->get() as $post)
                     <div class="card">
-                        <div class="card-header">{{ $post->title }} @ {{ $post->created_at }}</div>
+                        <div class="card-header">
+                            #{{ $post->id }}
+                            {{ $post->title }} @ {{ $post->created_at }}</div>
 
                         <div class="card-body">
                             {{ $post->content }}
