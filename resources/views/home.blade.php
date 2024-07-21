@@ -8,8 +8,9 @@
                     <div class="card">
                         <div class="card-header">
                             #{{ $post->id }}
-                            {{ $post->title }} @ {{ $post->created_at }}</div>
-
+                            {{ $post->title }} @ {{ $post->created_at }}
+                            <a href="{{ route('posts.edit', [$post->id]) }}">(Edit)</a>
+                        </div>
                         <div class="card-body">
                             {{ $post->content }}
                         </div>
