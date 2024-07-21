@@ -66,6 +66,13 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         //
+        $post->title=request('title');
+        $post->content=request('content');
+        $post->user_id=\Auth::id();
+        $post->save();
+        
+        // return "Post created";
+        return redirect()->route('posts.edit',[$post->id])->with('success',true); 
     }
 
     /**

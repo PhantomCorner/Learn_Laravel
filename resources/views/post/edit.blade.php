@@ -5,8 +5,13 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h2>Edit</h2>
-                <form action="{{ route('posts.store') }}" method="POST">
+                @if (@session('success'))
+                    <div class="alert alert-success">
+                        Success</div>
+                @endif
+                <form action="{{ route('posts.update', [$post->id]) }}" method="POST">
                     @csrf
+                    @method('put')
                     <div class="form-group">
                         <label for='title'>Title</label>
                         <input type="text" class='form-control' id='title' name='title' value="{{ $post->title }}">
