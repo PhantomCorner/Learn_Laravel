@@ -5,6 +5,15 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h2>Create</h2>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ route('posts.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
